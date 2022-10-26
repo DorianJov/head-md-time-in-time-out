@@ -3,9 +3,18 @@
 ## Intresting Links
 
 https://cartonumerique.blogspot.com/2019/02/global-internet-map-2018.html
+
 https://www.submarinecablemap.com/
 
 1) Research based on my own experiences and point of view:
+
+## Internet cartography 
+
+Internet is made with hidden cables underground and underseas
+Thoses physical "routes" makes us connected.
+There is new tech as well, plane, balloons, satellites.
+
+![underSeaCables](https://productivetihube.files.wordpress.com/2019/08/1_13kqfsriwocdwk30cfhksq.png)
 
 ## To the point
 Today we are overconnected. We share our personal space and time with the entire world. But mostly we interact everyday with people that concern our life habits in that numeric shared space time.
@@ -13,6 +22,8 @@ Today we are overconnected. We share our personal space and time with the entire
 Our communication methods have become so effective we can even speak with anyone while doing things we should do alone.
 
 Always faster but never slower. 
+
+
 
 ## Exemples
 Sleeping. People still talk to you, like whispers lost in the clouds... they'll eventually get to you when you're awake.
@@ -33,15 +44,11 @@ When you receive a message, you may feel it's your duty to responds instantely. 
 
 Application based on time optimisation. CFF can propose to use your currentLocation to travel. We don't even have to know where we are anymore and cheking the nearest bus stop... 
 
-## Internet cartography 
-
-Internet is made with hiden cables underground and underseas
-Thoses physical "routes" makes us connected.
-There is new tech as well, Flyin plane, balloon, satellite.
-
 ## What if ?
 
 Informations takes longer to arrive ? if all messages/mails had a delay. Like if someone had to get to your position to talk to you.
+
+Having a postman that manages all the messages/mails and deliver it to you once a day ? 
 
 
 
