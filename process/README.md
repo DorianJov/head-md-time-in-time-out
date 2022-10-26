@@ -28,11 +28,9 @@ The fatest our digital interraction is, the more we are in between two space and
 ## Exemples
 Sleeping. People still talk to you, like whispers lost in the clouds... they'll eventually get to you when you're awake.
 
-Finished work/school, you're at home but the task are still gettin to you, with email or messages. Even on breaks, there is something to remind you to work.
+Finished work/school, you're at home but the task are still gettin to you, with email or messages. Even on breaks, there is something to remind you to work. "Even I'm not supposed to work, I must call them and responds for things" - dad.
 
-My dad "Even I'm not supposed to work, I must call them and responds for things".
-
-We can get disconnected to present, we kind of lost capacity to wait and get bored, Since we are always solicited in a way or other. We cannot leave this system. No mail, no instant chat, you can't.
+We can get disconnected to present, we kind of lost capacity to wait and get bored, Since we are always solicited in a way or other. We cannot leave this system. No mail ? no instant chat ? seems hard.
 
 ## How does it relate to time ?
 
