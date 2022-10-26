@@ -37,6 +37,7 @@ We can get disconnected to present, we kind of lost capacity to wait and get bor
 We associate space and time to differents experiences and memories. Before, work was work at work. It's mixing.
 
 Before instant message or acces on service, we must wait for it. Wait for a letter, wait for a bird, wait for a person.
+And there was a special space dedicated to a specific communication system.
 
 When you receive a message, you may feel it's your duty to responds instantely. Therefor, it is kind of manipulating your actions and time. 
 
