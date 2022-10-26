@@ -22,7 +22,7 @@ Today we are overconnected. We share our personal space and time with the entire
 
 Our communication methods have become so effective we can even speak with anyone while doing things we should do alone.
 
-Always faster but never slower. 
+The fatest our digital interraction is, the more we are in between two space and time. It's overlapping. Always faster but never slower.
 
 
 ## Exemples
