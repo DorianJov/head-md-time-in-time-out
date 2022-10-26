@@ -1,5 +1,10 @@
 ## Time In Time Out || First Personal Reasearch
 
+## Intresting Links
+
+https://cartonumerique.blogspot.com/2019/02/global-internet-map-2018.html
+https://www.submarinecablemap.com/
+
 1) Research based on my own experiences and point of view:
 
 ## To the point
@@ -37,6 +42,7 @@ There is new tech as well, Flyin plane, balloon, satellite.
 ## What if?
 
 Informations takes longer to arrive ? if all messages/mails had a delay. Like if someone had to get to your position to talk to you.
+
  
 
 
