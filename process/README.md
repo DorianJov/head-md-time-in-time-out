@@ -25,7 +25,6 @@ Our communication methods have become so effective we can even speak with anyone
 Always faster but never slower. 
 
 
-
 ## Exemples
 Sleeping. People still talk to you, like whispers lost in the clouds... they'll eventually get to you when you're awake.
 
@@ -47,9 +46,13 @@ Application based on time optimisation. CFF can propose to use your currentLocat
 
 ## What if ?
 
+Snail effect: Long wait but surprinsing to receive.
+
 Informations takes longer to arrive ? if all messages/mails had a delay. Like if someone had to get to your position to talk to you.
 
 Having a postman that manages all the messages/mails and deliver it to you once a day ? 
+
+
 
 
 
