@@ -6,8 +6,6 @@ https://cartonumerique.blogspot.com/2019/02/global-internet-map-2018.html
 
 https://www.submarinecablemap.com/
 
-1) Research based on my own experiences and point of view:
-
 ## Internet cartography 
 
 Internet is made with hidden cables underground and underseas
@@ -17,6 +15,9 @@ There is new tech as well, plane, balloons, satellites.
 ![underSeaCables](https://productivetihube.files.wordpress.com/2019/08/1_13kqfsriwocdwk30cfhksq.png)
 
 ## To the point
+
+1) Research based on my own experiences and point of view:
+
 Today we are overconnected. We share our personal space and time with the entire world. But mostly we interact everyday with people that concern our life habits in that numeric shared space time.
 
 Our communication methods have become so effective we can even speak with anyone while doing things we should do alone.
