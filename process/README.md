@@ -31,7 +31,7 @@ Before instant message or acces on service, we must wait for it. Wait for a lett
 
 When you receive a message, you may feel it's your duty to responds instantely. Therefor, it is kind of manipulating your actions and time. 
 
-Application based on time optimisation. CFF can propose to use your currentLocation to travel. We don't have to, at least, know where we are and cheking the nearest bus stop 
+Application based on time optimisation. CFF can propose to use your currentLocation to travel. We don't even have to know where we are anymore and cheking the nearest bus stop... 
 
 ## Internet cartography 
 
@@ -39,9 +39,11 @@ Internet is made with hiden cables underground and underseas
 Thoses physical "routes" makes us connected.
 There is new tech as well, Flyin plane, balloon, satellite.
 
-## What if?
+## What if ?
 
 Informations takes longer to arrive ? if all messages/mails had a delay. Like if someone had to get to your position to talk to you.
+
+
 
  
 
