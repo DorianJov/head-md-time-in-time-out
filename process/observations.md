@@ -4,8 +4,8 @@ Resume: (Read this if your lazy)
 
 Nine Inch Nails - Every Day Is Exactly the Same
 
-This song made me think of repetive routines and how we'all have our special interactions based on a succesion of actions in time. 
-
+This song made me think of repetive routines and how we'all have our special interactions based on a succesion of actions in time.
+ 
 I found "Pattern of life Analysis" which consist of studying people and what they do, to predict their near future actions
 
 My and your habits are linked in a context. time and space. I started focusing on my daily paths.(position, time, speed).
