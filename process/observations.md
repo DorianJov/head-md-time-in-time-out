@@ -12,7 +12,7 @@ https://cambridge-intelligence.com/pattern-of-life-analysis/
 
  "Pattern of life (POL) or behavior pattern describes a recurrent (e.g., normalcy) way of acting by an individual or group toward a given object or in a given situation. Usually, one has a specific POL, and this POL is repeatable".
 
- ![SendingMails]https://cambridge-intelligence.com/wp-content/uploads/2021/01/6-scale-wrapping-by-time-of-day-min.png
+ ![SendingMails](https://cambridge-intelligence.com/wp-content/uploads/2021/01/6-scale-wrapping-by-time-of-day-min.png)
 
 
 
