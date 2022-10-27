@@ -5,7 +5,7 @@ Resume: (Read this if your lazy)
 Nine Inch Nails - Every Day Is Exactly the Same
 
 This song made me think of repetive routines and how we'all have our special interactions based on a succesion of actions in time.
- 
+
 I found "Pattern of life Analysis" which consist of studying people and what they do, to predict their near future actions
 
 My and your habits are linked in a context. time and space. I started focusing on my daily paths.(position, time, speed).
@@ -14,7 +14,7 @@ Researched Butterfly effect and Causality: Our habits is kind of a causality cre
 
 Everything is in motion but how do I interact with speed: My speed is always link with something to do and not controlled. I walk to get somewhere, do i need to hurry ? Yes ? go faster. No ? chill. 
 
-Reminded me of a action movie: "Crank" A hitman who got poisoned and has to stay in movement to not die. In this situation I guess, you become conscious of your speed and how you use it.
+Reminded me of a action movie: "Crank" A hitman who got poisoned and has to stay in movement to not die. In this situation I guess, you become conscious of your speed and how you use it. Or "Obligate ram ventilators" Types of sharks that must be swimming to receive oxygen.
 
 In animation we need to learn how to control speed over a period of time with time shifting methods(ease in, out). 
 
