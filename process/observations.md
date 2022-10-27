@@ -45,7 +45,7 @@ Average Speed: 27km/h
 Realised I have not enough data. I looked for another app.
 
 I can record the entire day and get a graph:
-![From 8h24 to 13h](img/Geo-Tracker-2022-10-27-12-52-09[896].png)
+![From 8h24 to 13h](img/Geo-Tracker-2022-10-27-12-52-09.png)
 
 
 
