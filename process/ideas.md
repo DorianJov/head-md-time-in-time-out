@@ -13,3 +13,5 @@ Having a postman that manages all the messages/mails and deliver it to you once 
 2) Confront your wait 
 
 How much you're willing to invest your time to receive thoses messages ? 
+
+
