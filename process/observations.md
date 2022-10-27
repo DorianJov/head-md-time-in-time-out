@@ -14,6 +14,8 @@ https://cambridge-intelligence.com/pattern-of-life-analysis/
 
  ![SendingMails](https://cambridge-intelligence.com/wp-content/uploads/2021/01/6-scale-wrapping-by-time-of-day-min.png)
 
+ By checking at what time people sends email you can know their working time and the others that continues to work after work.
+
 
 ## My position and speed patterns
 
@@ -23,24 +25,28 @@ We all have a routine, habits. We time control.
 Here are some data of "speed" routine.
 
 1) Lausanne lane 5 to 7:
-Dist: 160m
-Time : 2min
-Average Speed: 3km
+
+- Dist: 160m
+- Time : 2min
+- Average Speed: 3km
 
 2) Train Lausanne to Vufflens:
-Dist: 11.20km
-Time : 12:30m
-Average Speed:65km/h
+
+- Dist: 11.20km
+- Time : 12:30m
+- Average Speed:65km/h
 
 3) TrainStation to Mom's car
-Dist: 90m
-Time: 1m
-Average Speed: 4km/h
+
+- Dist: 90m
+- Time: 1m
+- Average Speed: 4km/h
 
 4) (Car) Mom's car to home
-Dist: 1.28 km
-Time: 3:08
-Average Speed: 27km/h
+
+- Dist: 1.28 km
+- Time: 3:08
+- Average Speed: 27km/h
 
 Realised I have not enough data. I looked for another app.
 
