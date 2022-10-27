@@ -1,4 +1,25 @@
 ## Time In Time Out Observations
+
+Resume: (Read this if your lazy)
+
+Nine Inch Nails - Every Day Is Exactly the Same
+
+This song made me think of repetive routines and how we'all have our special interactions based on a succesion of actions in time. 
+
+I found "Pattern of life Analysis" which consist of studying people and what they do, to predict their near future actions
+
+My and your habits are linked in a context. time and space. I started focusing on my daily paths.(position, time, speed).
+
+Researched Butterfly effect and Causality: Our habits is kind of a causality created by us. But in our succesive actions there is a part of unknown like a "butterfly effect". Does my speed variaton can create something ?
+
+Everything is in motion but how do I interact with speed: My speed is always link with something to do and not controlled. I walk to get somewhere, do i need to hurry ? Yes ? go faster. No ? chill. 
+
+Reminded me of a action movie: "Crank" A hitman who got poisoned and has to stay in movement to not die. In this situation I guess, you become conscious of your speed and how you use it.
+
+In animation we need to learn how to control speed over a period of time with time shifting methods(ease in, out). 
+
+How could I become more aware of my speed and use it to create something.
+
  
 ## Pattern of Life Analysis
 
@@ -52,10 +73,6 @@ Realised I have not enough data. I looked for another app.
 ![Data](img/Geo-Tracker-2022-10-27-12-52-09.png)
 
 
-
-
-
-
 ## Butterfly effect || Causality
 
 "In chaos theory, the butterfly effect is the sensitive dependence on initial conditions in which a small change in one state[...]can result in large differences in a later state." - Wiki
@@ -63,8 +80,14 @@ Realised I have not enough data. I looked for another app.
 How do we experience the domino effect in our life habits and how a sequence of events in time can results to something not wanted or unpredictable.
 
 
+## Animations
+
+Good animations rely on particular speed and the use of time shifting method (ease-in, ease out).
+
+
+
  ## Pattern, Speed, Causality okay but why ?
 
  - How different time speed can predict certains action ?
- - With a simple succesion of mouvement can you guess what people are   doing ?
+ - Story output based on your speed history.
  - How to create a story evolving with a succesion of movement.
