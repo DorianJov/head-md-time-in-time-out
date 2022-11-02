@@ -1,6 +1,8 @@
 ## Time In Time Out Observations October 2022
 
-Resume: (Read this if your lazy)
+## Resume: (Read this if your lazy)
+
+Resume: October 2022
 
 Nine Inch Nails - Every Day Is Exactly the Same
 
@@ -19,6 +21,16 @@ Reminded me of a action movie: "Crank" A hitman who got poisoned and has to stay
 In animation we need to learn how to control speed over a period of time with time shifting methods(ease in, out). 
 
 How could I become more aware of my speed and use it to create something.
+
+Resume: Novemember 2022.11.02
+
+Researched on speed theory and chaos movement. 
+
+We all have "movement/speed" habits. For exemple: My current student's week average time per day outside my house is 13 hours. "Moving habits" made me think of an hamster on a wheel, at the core, it uses speed to keeps im busy. 
+
+
+
+
 
  
 ## Pattern of Life Analysis
@@ -129,3 +141,8 @@ Predict future based on mouvement but more complicated than that.
 https://store.steampowered.com/app/334350/Dont_Move/
 
 "Don't Move is about ninjas, failure, ludonarrative dissonance, and player investment manipulation. Don't Move starts simply: move left or right. But as you try -- and as you fail -- to move, you unlock more of the game's mechanisms. With each new element comes new challenges and more rewards!"
+
+
+## Other Findings:  Restraining mouvement
+
+https://fr.wikipedia.org/wiki/Zugzwang
