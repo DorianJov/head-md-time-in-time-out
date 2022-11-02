@@ -1,4 +1,4 @@
-## Time In Time Out Observations October 20022
+## Time In Time Out Observations October 2022
 
 Resume: (Read this if your lazy)
 
@@ -95,8 +95,21 @@ Good animations rely on particular speed and the use of time shifting method (ea
 
 ## Time In Time Out Observations November 2022.11.02
 
-I've recorded my speed in different days. I ask some friends to do it aswell.
+I've recorded my speed in different days. I ask some friends to do it aswell. Record starts when leaves home and get back at the end of the day.
 
+## Dorian, Student
 ![Dorian 01](img/dorian01.png)
 ![Dorian 02](img/dorian02.png)
 ![Dorian 03](img/dorian03.png)
+
+
+## Kevin Student
+![Kevin 01](img/Kevin01.jpg)
+
+
+## Yannick free time
+![Yannick 01](img/Yannick.jpg)
+
+## Conclusion
+
+Average day Outside
