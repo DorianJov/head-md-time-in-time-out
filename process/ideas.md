@@ -15,3 +15,4 @@ Having a postman that manages all the messages/mails and deliver it to you once 
 How much you're willing to invest your time to receive thoses messages ? 
 
 
+3) Speed conscious. Use speed as intercation. Creating another experience of what being in movement means.
