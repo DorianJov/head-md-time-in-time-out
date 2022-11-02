@@ -110,6 +110,22 @@ I've recorded my speed in different days. I ask some friends to do it aswell. Re
 ## Yannick free time
 ![Yannick 01](img/Yannick.jpg)
 
-## Conclusion
 
-Average day Outside
+## Other Findings:  Chaos therory
+
+Chaos theory in movement, determinism:
+
+Predict future based on mouvement but more complicated than that.
+
+- https://www.youtube.com/watch?v=JNWM8hTXVNM
+
+- https://www.youtube.com/watch?v=vL6cVjnNXek
+
+- https://www.youtube.com/watch?v=JT97vBCSNks&feature=emb_title
+
+
+## Other Findings:  Games that use mouvement
+
+https://store.steampowered.com/app/334350/Dont_Move/
+
+"Don't Move is about ninjas, failure, ludonarrative dissonance, and player investment manipulation. Don't Move starts simply: move left or right. But as you try -- and as you fail -- to move, you unlock more of the game's mechanisms. With each new element comes new challenges and more rewards!"
