@@ -1,4 +1,4 @@
-## Time In Time Out Observations
+## Time In Time Out Observations October 20022
 
 Resume: (Read this if your lazy)
 
@@ -91,3 +91,12 @@ Good animations rely on particular speed and the use of time shifting method (ea
  - How different time speed can predict certains action ?
  - Story output based on your speed history.
  - How to create a story evolving with a succesion of movement.
+
+
+## Time In Time Out Observations November 2022.11.02
+
+I've recorded my speed in different days. I ask some friends to do it aswell.
+
+![Dorian 01](img/dorian01.png)
+![Dorian 02](img/dorian02.png)
+![Dorian 03](img/dorian03.png)
