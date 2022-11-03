@@ -3,14 +3,14 @@ Main reference: "Crank" A hitman (Chev Chelios) who got poisoned and has to stay
 
 Basically. Chev Chelios, a guy that must move against his will, to stay alive. We can imagine weird scenario with that in mind. He must do things he cannot really do while moving. Waiting in line, WC, Eating/Drinking, taking a crowded train, sleeping. Meditate and other weird things.
 
-In his case staying still will be ephemeral. His default state is: Moving.
-In my case it's the opposite moving is ephemeral, My default state is staying chill.
+In his case, staying still will be ephemeral. His default state is: Moving.
+In my case it's the opposite: moving is ephemeral, My default state is staying chill.
 
-## What can Chev Chelios be !?
+## What Chev Chelios could be !?
 Chev Chelios as Chev Chelios: Entity that depends on movement to survive.
 - Species of shark
 - Seeds from a tree/plant (helicopter seed, exploding seed, water propultion seed, nature's mouvement cheats to survive).
-- Spermatozoon
+- Spermatozoon 
 
 Chev Chelios as an object: being static is not intented.
 - Spinning Top

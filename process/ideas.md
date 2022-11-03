@@ -17,9 +17,3 @@ How much you're willing to invest your time to receive thoses messages ?
 
 3) Speed conscious. Use speed as intercation. Creating another experience of what being in movement means.
 
-
-- Routine de déplacement: qu'est-ce qui provoque des contradictions dans mon déplacement.
-
-Utiliser des contradictions sur du mouvement fixe et pas stable.
-
-Qu'est que pourrait être les obstacles. Pourquoi ? ces contradictions happens
