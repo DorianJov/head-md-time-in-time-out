@@ -1,7 +1,11 @@
 ## CRANK !
 Main reference: "Crank" A hitman (Chev Chelios) who got poisoned and has to stay in movement to not die.
 
-Basically. Chev Chelios, a guy that must move against his will, to stay alive. We can imagine weird scenario with that in mind. He must do things he cannot really do while moving. Waiting in line, WC, Eating/Drinking, taking a crowded train, sleeping. Meditate and other weird things.
+Basically. Chev Chelios, a guy that must move against his will, to stay alive. We can imagine weird scenario with that in mind. He must do things he cannot really do while moving. Waiting in line, WC, Eating/Drinking, Taking a crowded train, sleeping. Meditate and other weird things.
+
+Weird exemples:
+
+What if ?: Chev Chelios has a date in a restaurant, how would intercat to not die while eating all his meals.
 
 In his case, staying still will be ephemeral. His default state is: Moving.
 In my case it's the opposite: moving is ephemeral, My default state is staying chill.
@@ -59,6 +63,7 @@ To Stop or not to stop.
 To Pause to Play
 To Stop to Move
 "As fast as possible and slowly as necessary".
+"le quart d'heure vaudois".
 
 
 ## My datas 
@@ -94,9 +99,12 @@ What can be stopping/slowing my movement in general ?:
 - a door
 - portals in stores
 - automatic walls/doors
-- public transport (trains/bus/planes/boats)
+- public transport (trains/bus/planes/boats).
 - Driving
-- 
+
+
+And How my emotions are influencing my movement ?:
+- People influencing if I stay or not
 
 What keeps me moving ?:
 
