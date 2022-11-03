@@ -55,6 +55,7 @@ What's does it do ?
 ## Concepts Duality Stop/Move, Play/Pause
 
 Concepts:
+
 Contradictions:
 
 Chaos and habits.
@@ -64,6 +65,32 @@ To Pause to Play
 To Stop to Move
 "As fast as possible and slowly as necessary".
 "le quart d'heure vaudois".
+
+
+FEEDBACK***
+
+///////////////////////////////////////////////////////////////////////
+
+Jeu avec le temps et pousser les limites avec le temps.
+Gagner du temps et c'est pas possbile dans la pluparts des cas.
+
+Contradictions Slow/Fast.
+"Explorer ces contradictions lets just wait for another minutes".
+
+
+After work is only liberty 
+
+"Revenge bedtime procrastination"
+
+Le temps est toujours aguet notion du risque.
+
+Quel moment a quelle vous pouvez controller le temps et à quelle moment vous prenez le risque.
+
+
+Exagerer l'histoire "stay one more minute" and work on the consequences.
+
+
+///////////////////////////////////////////////////////////////////////
 
 
 ## My datas 
