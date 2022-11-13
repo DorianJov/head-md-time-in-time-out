@@ -82,9 +82,9 @@ After work is only liberty
 
 "Revenge bedtime procrastination"
 
-Le temps est toujours aguet notion du risque.
+Le temps est toujours aux aguets, notion du risque.
 
-Quel moment a quelle vous pouvez controller le temps et à quelle moment vous prenez le risque.
+Quel moment vous pouvez controller le temps et à quelle moment vous prenez le risque.
 
 
 Exagerer l'histoire "stay one more minute" and work on the consequences.
