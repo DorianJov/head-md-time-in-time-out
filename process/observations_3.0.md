@@ -46,10 +46,20 @@ Transports:
 
 /// feedback
 
+//To do
 
+1)
 Pauffiner la work scene.
-
 Rendre plus poétique que les gens partents.
 Chaise se vide peu à peu.
 
+2)
 Faire la scène plus smooth du "You're Fired."
+Make the storylet (shape like a Paris Metro)
+
+3)
+Revisiter l'ascenseur.
+Être à l'intérieur au lieu de l'extérieur. 
+
+Bloqué ?
+Musique en boucle ?
