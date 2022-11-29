@@ -44,3 +44,12 @@ Transports:
 
 
 
+/// feedback
+
+
+Pauffiner la work scene.
+
+Rendre plus poétique que les gens partents.
+Chaise se vide peu à peu.
+
+Faire la scène plus smooth du "You're Fired."
