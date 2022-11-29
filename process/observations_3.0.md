@@ -3,7 +3,7 @@ Contradictions run to wait, wait to run.
 How time can punish us. In what situation can be get punished or forgiven.
 Exemple waking up late, we have to run to take our bus/train but the train is delayed so we have more time. Time was forgiving this time.
 
-Object design idea:
+## Object interaction ideas
 
 Pulling a rope and making a clock arrow spining.
 Making the rope cuttable, when you cut it, you end your story. it presses a button.
