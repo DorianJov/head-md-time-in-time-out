@@ -44,7 +44,7 @@ Transports:
 
 
 
-/// feedback
+////// FEEDBACK
 
 //To do
 
@@ -54,12 +54,13 @@ Rendre plus poétique que les gens partents.
 Chaise se vide peu à peu.
 
 2)
-Faire la scène plus smooth du "You're Fired."
+Faire la scène plus smooth du "You're Fired." Eviter les insultes
 Make the storylet (shape like a Paris Metro)
 
 3)
 Revisiter l'ascenseur.
 Être à l'intérieur au lieu de l'extérieur. 
-
 Bloqué ?
 Musique en boucle ?
+
+4) Trouver une image pour le pitch
