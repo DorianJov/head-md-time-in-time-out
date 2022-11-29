@@ -6,6 +6,11 @@ Exemple waking up late, we have to run to take our bus/train but the train is de
 Object design idea:
 
 Pulling a rope and making a clock arrow spining.
+Making the rope cuttable, when you cut it, you end your story. it presses a button.
+
+You can end your story by: 
+- pulling the rope indefinitly until no more rope.
+- Cutting it.
 
 ## Lose Lose scenario. Time for respect
 Lose Lose: You waited. But it's too late now. You wait more it's bad, you stop waiting it's bad aswell.
