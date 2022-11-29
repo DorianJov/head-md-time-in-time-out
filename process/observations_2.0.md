@@ -66,33 +66,6 @@ To Stop to Move
 "As fast as possible and slowly as necessary".
 "le quart d'heure vaudois".
 
-
-FEEDBACK***
-
-///////////////////////////////////////////////////////////////////////
-
-Jeu avec le temps et pousser les limites avec le temps.
-Gagner du temps et c'est pas possbile dans la pluparts des cas.
-
-Contradictions Slow/Fast.
-"Explorer ces contradictions lets just wait for another minutes".
-
-
-After work is only liberty 
-
-"Revenge bedtime procrastination"
-
-Le temps est toujours aux aguets, notion du risque.
-
-Quel moment vous pouvez controller le temps et à quelle moment vous prenez le risque.
-
-
-Exagerer l'histoire "stay one more minute" and work on the consequences.
-
-
-///////////////////////////////////////////////////////////////////////
-
-
 ## My datas 
 
 Record myself everyday. My Moving habits: Each day has an average scenario which can be defined by speed and the time I'm in movement. Sometimes events happen and breaks this average habits.  Per day, I have 4 hours ~ which I'm in a movement whatever speed I'm at. Daily routine can be associated with that.
@@ -121,14 +94,12 @@ What's makes me keep moving during my habits ?:
 - Going Home
 - Moving to sit
 
-
 What can be stopping/slowing my movement in general ?:
 - a door
 - portals in stores
 - automatic walls/doors
 - public transport (trains/bus/planes/boats).
 - Driving
-
 
 And How my emotions are influencing my movement ?:
 - People influencing if I stay or not
@@ -139,9 +110,24 @@ What's my Chev Chelios ? Determinism
 What's the obstacles ? Slow Chaos
 What's does it do ? happy accident
 
-
-
 Routine de déplacement: qu'est-ce qui provoque des contradictions dans mon déplacement.
 Utiliser des contradictions sur du mouvement attendu et pas stable.
 Qu'est que pourrait être les obstacles. Pourquoi ? ces contradictions happens
 
+## SCOPING
+FEEDBACK***
+///////////////////////////////////////////////////////////////////////
+Jeu avec le temps et pousser les limites avec le temps.
+Gagner du temps et c'est pas possbile dans la pluparts des cas.
+
+Contradictions Slow/Fast.
+"Explorer ces contradictions lets just wait for another minutes".
+
+After work is the only liberty 
+"Revenge bedtime procrastination"
+
+Le temps est toujours aux aguets, notion du risque.
+Quel moment vous pouvez controller le temps et à quelle moment vous prenez le risque.
+
+Exagerer l'histoire "stay one more minute" and work on the consequences.
+///////////////////////////////////////////////////////////////////////

@@ -1,38 +1,41 @@
-FEEDBACK***
+## Observation 3 focus more on the scope of the project
+Contradictions run to wait, wait to run.
+How time can punish us. In what situation can be get punished or forgiven.
+Exemple waking up late, we have to run to take our bus/train but the train is delayed so we have more time. Time was forgiving this time.
 
-///////////////////////////////////////////////////////////////////////
-Jeu avec le temps et pousser les limites avec le temps.
-Gagner du temps et c'est pas possbile dans la pluparts des cas.
+Object design idea:
 
-Contradictions Slow/Fast.
-"Explorer ces contradictions, lets just wait for another minutes".
+Pulling a rope and making a clock arrow spining.
 
-After work is only liberty.
+## Lose Lose scenario. Time for respect
+Lose Lose: You waited. But it's too late now. You wait more it's bad, you stop waiting it's bad aswell.
 
-"Revenge bedtime procrastination".
+## In which situation can it be "too late" and have consequences weither you do.
 
-Le temps est toujours aguet notion du risque.
+Scenario where you shouldn't have waited in the first place:
 
-Quel moment a quelle vous pouvez controller le temps et à quelle moment vous prenez le risque.
+Either you act or you wait longer.
 
-Dans quelle scénario peut-on se permettre de miser notre temps.
-Dans un contexte ou il y'a plusieurs possibl
-
-Exagerer l'histoire "stay one more minute" and work on the consequences.
-
-///////////////////////////////////////////////////////////////////////
-
-Scénarios on l'ou peut "défier" le temps:
-Scenarios where we can "fight" time:
+- Go late to sleep and not sleep.
+stop waiting = sleep paralysis(may be triggered by lack of sleep and having undefined sleep cycle).
+Waiting more = not sleeping.
 
 
-Sleep more or not sleep yet:
-- Go late to sleep.
+- Go late to sleep and not sleep.
 - get out the bed in the morning.
 - take a nap longer that expected.
 
+- Waiting for your last dish to cook. You cannot buy food anymore for today.
+Stop Waiting = eating your burned food.
+Waiting more = bruning your food to dust.
+
+- Waiting for your last bus.
+- Waiting more = miss the bus so you end up havin a bad night.
+- Stop waiting take the bus but 
 
 Transports:
-
 - Taking the train. Run to take it but it's delayed, worst it is deleted.
 - Attendre l'ascenceur
+
+
+
