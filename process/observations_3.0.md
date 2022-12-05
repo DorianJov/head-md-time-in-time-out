@@ -64,3 +64,7 @@ Bloqué ?
 Musique en boucle ?
 
 4) Trouver une image pour le pitch
+
+
+
+
