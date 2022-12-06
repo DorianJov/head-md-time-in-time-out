@@ -27,3 +27,41 @@ OUTPUT:
 # 
 
 
+Crocodile game:
+
+saw game.
+
+- tirer la ficelle ressentir des vibrations. 
+- attentation à ne pas aller trop loin. sinon lost.
+
+- who can give the more time ?
+win based on the length of the thread.
+
+or to win cut instantely the thread and don't play. dont play = don't activate the bomb
+
+can "brain" the user with a buzzer makin stressing noise, making them feel its gonna explode 
+
+tableau based on time.
+
+if user goes too fast it explodes.
+
+user has a bomb on himself
+
+exploding buzzer
+
+user shouldnt know much he pulled
+
+HOW TO LOSE:
+
+Too fast ||  Pulling the thread too much
+
+HOW TO LOSE LESS:
+
+Stoping before it explodes.
+Try going further and further.
+
+GOAL:
+
+Get the longest thread. don't play too much with time.
+Once you finished your experience you can see the thread length of other player.
+Who gave the most time and who got the bigger respect
