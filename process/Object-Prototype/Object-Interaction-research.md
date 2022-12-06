@@ -54,7 +54,7 @@ Get the longest thread. don't play too much with time.
 Once you finished your experience you can see the thread length of other player.
 Who gave the most time and who got the bigger respect
 
-## Second IDEA
+## Better IDEA
 
 INPUT: 
 - pull the thread
@@ -65,16 +65,20 @@ OUTPUT:
 - Scissors -> cut the the thread
 
 # Begin
-
 Pull the string.
 
 # Experience
-
 Play Against the machine.
 Try to get the longest thread.
 But don't play too much you can lose everything.
+The machine won't let you pull that string that easily.
+You need to find the right interaction.
 
-The 
+# Ends possible
+- Cut the string to finish and keep your thread that represent your time spent.
+- The Machine eats the string and you definitely lost your time.
+
+
 
 
 
