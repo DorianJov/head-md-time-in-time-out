@@ -72,7 +72,9 @@ Play Against the machine.
 Try to get the longest thread.
 But don't play too much you can lose everything.
 The machine won't let you pull that string that easily.
+This thing has a behavior, it vibrates, can be really fast.
 You need to find the right interaction.
+
 
 # Ends possible
 - Cut the string to finish and keep your thread that represent your time spent.
