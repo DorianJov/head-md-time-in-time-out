@@ -1,28 +1,50 @@
+// these two pins has the hardware interrupts as well.
 #define Encoder_output_A 17  // pin2 of the Arduino
 #define Encoder_output_B 5   // pin 3 of the Arduino
-// these two pins has the hardware interrupts as well.
 
-
-
+// led pins
 #define redPin 15
 #define orangePin 0
 #define greenPin 16
 
+// make my function(ledManagement) faster.
 #define red 1
 #define orange 2
 #define green 3
 
-int pwmChannel = 0;    //Choisit le canal 0
-int frequence = 1000;  //Fréquence PWM de 1 KHz
-int resolution = 8;    // Résolution de 8 bits, 256 valeurs possibles
+#define noLight false
+#define light true
 
+#define Blink true
+#define justON false
+
+//Led variables
+int color;
+bool state;
+bool isblinking;
+int blinkingTime;
+
+bool lightled;
+
+
+
+
+
+//define seconds function
+#define seconds() (millis() / 1000)
+
+//motor+
 #define motorPin 32
 
 bool motorFinishedReset = true;
+
+//Motor Encoder Value
 int Count_pulses = 0;
 
+//current Puzzle to solve
 int Currentlevel = 0;
 
+//pull string to begin.
 bool gameJustStarted = true;
 
 void setup() {
@@ -30,48 +52,43 @@ void setup() {
   //ESP.restart();
   Serial.begin(9600);  // activates the serial communication
 
+  //motor encoder
   pinMode(Encoder_output_A, INPUT);  // sets the Encoder_output_A pin as the input
   pinMode(Encoder_output_B, INPUT);  // sets the Encoder_output_B pin as the input
 
+  //leds
+  pinMode(redPin, OUTPUT);
+  pinMode(orangePin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
 
-  pinMode(redPin, OUTPUT);     //
-  pinMode(orangePin, OUTPUT);  //
-  pinMode(greenPin, OUTPUT);   //
+  //Esp32 pin to transistor to motor+
+  pinMode(motorPin, OUTPUT);
 
-  pinMode(motorPin, OUTPUT);  //
-
-
-  //ledcAttachPin(motorPin, 0);
-
-  // Configuration du canal 0 avec la fréquence et la résolution choisie
-  //ledcSetup(pwmChannel, frequence, resolution);
-
-  // Assigne le canal PWM au pin 23
-  //ledcAttachPin(motorPin, pwmChannel);
-
-  //analogWrite(motorPin, 0);
-  //ledcWrite(pwmChannel, 0);
-  //delay(1000);
-
+  //each time encoder is used -> ++Count_pulses or --Count_pulses
   attachInterrupt(digitalPinToInterrupt(Encoder_output_A), DC_Motor_Position, RISING);
 }
 
 void loop() {
   Serial.println(String("Result:  ") + Count_pulses + String(" motorFinishedReset: ") + motorFinishedReset);
+
   //LevelManager(0);
 
   if (gameJustStarted) {
     start();
   }
 
-  //analogWrite(motorPin, 255);
 
 
-  // Créer la tension en sortie choisi
-  //ledcWrite(pwmChannel, 100); //1.65 V
+  if (lightled) {
+    ledManager(color, state, isblinking, blinkingTime);
+  }
+
+
 
   //Level
 }
+
+
 
 void punish(int level) {
 
@@ -100,6 +117,8 @@ void start() {
   if (!motorFinishedReset) {
     resetMotorTo(0, 100);
   } else {
+    //Serial.print("GAME HAS STARTED");
+    //gameJustStarted = true;
     //Puzzle begin
     //LevelOneCanStart = true;
   }
@@ -120,7 +139,7 @@ void LevelManager(int Level) {
 
       if (Count_pulses <= -1000) {
         punish(Level);
-        led(red, true);
+        //led(red, light,);
       }
 
       break;
@@ -136,34 +155,36 @@ void DC_Motor_Position() {
   }
 }
 
-void led(int color, bool switchled) {
+void led(int ledcolor, bool On_Off, bool blink, int timeBlinking) {
 
-  switch (color) {
+  color = ledcolor;
+  state = On_Off;
+  isblinking = blink;
+  blinkingTime = timeBlinking;
 
-    case 1:
-      digitalWrite(redPin, switchled);
-      break;
-
-    case 2:
-      digitalWrite(orangePin, switchled);
-      break;
-
-    case 3:
-      digitalWrite(greenPin, switchled);
-      break;
-  }
+  lightled = true;
 }
 
-void ledBlink(int color, bool goBlink) {
-  
-  if (goBlink) {
-    int interval = millis()%60;
-    Serial.print(String("Interval value: ") + interval);
+void ledManager(int color, bool On_Off, bool blink, int blinkingTime) {
 
+
+  int interval = seconds();
+  Serial.print(String("   Interval value:  ") + interval + String("    "));
+
+  if (blinkingTime != 0) {
+    Serial.print("   Should Blink... ");
+    if (interval % blinkingTime == 0) {
+      //goBlink = false;
+      digitalWrite(redPin, false);
+      digitalWrite(orangePin, false);
+      digitalWrite(greenPin, false);
+      lightled = false;
+    }
+  }
+  if (blink) {
     switch (color) {
-
       case 1:
-        if (interval % 1 == 0) {
+        if (interval % 2 == 0) {
 
           digitalWrite(redPin, true);
         } else {
@@ -172,7 +193,7 @@ void ledBlink(int color, bool goBlink) {
         break;
 
       case 2:
-         if (interval % 1 == 0) {
+        if (interval % 2 == 0) {
           digitalWrite(orangePin, true);
         } else {
           digitalWrite(orangePin, false);
@@ -180,11 +201,27 @@ void ledBlink(int color, bool goBlink) {
         break;
 
       case 3:
-         if (interval % 1 == 0) {
+        if (interval % 2 == 0) {
           digitalWrite(greenPin, true);
         } else {
           digitalWrite(greenPin, false);
         }
+        break;
+    }
+  } else {
+
+    //just turn ON/OFF
+    switch (color) {
+      case 1:
+        digitalWrite(redPin, On_Off);
+        break;
+
+      case 2:
+        digitalWrite(orangePin, On_Off);
+        break;
+
+      case 3:
+        digitalWrite(greenPin, On_Off);
         break;
     }
   }
@@ -192,18 +229,19 @@ void ledBlink(int color, bool goBlink) {
 
 void resetMotorTo(int position, int speed) {
 
-
   if (!inRange(position)) {
-    led(red, true);
+
+    led(red, light, justON, 0);
     int speedMap = map(speed, 0, 100, 0, 255);
     analogWrite(motorPin, speedMap);
     Serial.print("   MotorShouldReset");
-  } else {
-    Serial.print("   Motor should not move");
 
-    ledBlink(red, true);
+  } else {
+
+    Serial.print("   Motor should not move");
+    led(red, light, Blink, 4);
     analogWrite(motorPin, 0);
-    
+
     motorFinishedReset = true;
   }
 }
