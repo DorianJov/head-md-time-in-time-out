@@ -26,9 +26,14 @@ int blinkingTime;
 
 bool lightled;
 
+int ledtoLight;
+
 int ledstate = LOW;
 
-
+// vibration var
+bool vibrate;
+int duration;
+int force;
 
 
 
@@ -39,6 +44,9 @@ unsigned long previousMillis = 0;
 
 //motor+
 #define motorPin 32
+
+//vibrator pin
+#define vibratorPin 34
 
 bool motorFinishedReset = true;
 
@@ -55,19 +63,17 @@ void setup() {
 
   //ESP.restart();
   Serial.begin(9600);  // activates the serial communication
-
   //motor encoder
   pinMode(Encoder_output_A, INPUT);  // sets the Encoder_output_A pin as the input
   pinMode(Encoder_output_B, INPUT);  // sets the Encoder_output_B pin as the input
-
   //leds
   pinMode(redPin, OUTPUT);
   pinMode(orangePin, OUTPUT);
   pinMode(greenPin, OUTPUT);
-
   //Esp32 pin to transistor to motor+
   pinMode(motorPin, OUTPUT);
-
+  //vibratorPIN
+  pinMode(vibratorPin, OUTPUT);
   //each time encoder is used -> ++Count_pulses or --Count_pulses
   attachInterrupt(digitalPinToInterrupt(Encoder_output_A), DC_Motor_Position, RISING);
 }
@@ -82,9 +88,12 @@ void loop() {
   }
 
 
+  if (vibrate) {
+    vibrationHint(duration, force);
+  }
 
   if (lightled) {
-    ledManager(color, state, isblinking, blinkingTime);
+    ledManager(color, state, blinkingTime);
   }
 
 
@@ -128,17 +137,10 @@ void start() {
   }
 }
 
-int LevelRules(int rulesLevel) {
-}
-
 void LevelManager(int Level) {
-
-
   switch (Level) {
-
     //Level 0 = tuto
     case 0:
-
 
 
       if (Count_pulses <= -1000) {
@@ -150,106 +152,131 @@ void LevelManager(int Level) {
   }
 }
 
-void DC_Motor_Position() {
-  int b = digitalRead(Encoder_output_B);
-  if (b > 0) {
-    Count_pulses++;
-  } else {
-    Count_pulses--;
-  }
-}
 
-void led(int ledcolor, bool On_Off, bool blink, int timeBlinking) {
+
+void led(int ledcolor, bool On_Off, int timeBlinking) {
 
   color = ledcolor;
   state = On_Off;
-  isblinking = blink;
   blinkingTime = timeBlinking;
 
   lightled = true;
 }
 
-void ledManager(int color, bool On_Off, bool blink, int blinkingTime) {
+void ledManager(int color, bool On_Off, int blinkingTime) {
 
-  const long interval = 50;
+  //blinking var
+  const long interval = 100;
   unsigned long currentMillis = millis();
-  
+  unsigned long second = seconds();
   
 
-  Serial.print(String("   Interval value:  ") + interval + String("    "));
+  //Serial.print(String("   Interval value:  ") + interval + String("    "));
 
-  
+  //if there is a blinking time go blink.
+  //if not just let it ON
   if (blinkingTime != 0) {
-
-   /* if (seconds() % blinkingTime == 0) {
-      //goBlink = false;
-      digitalWrite(redPin, false);
-      digitalWrite(orangePin, false);
-      digitalWrite(greenPin, false);
+    ///Stop blinking and turn off
+    if (second % blinkingTime == 0) {
+      // Serial.print("   Should TURN OFF... ");
+      ledstate = LOW;
+      digitalWrite(redPin, LOW);
+      digitalWrite(orangePin, LOW);
+      digitalWrite(greenPin, LOW);
+      color = NULL;
       lightled = false;
-    }*/
-  }
-  if (blink) {
+    }
 
-    switch (color) {
-      case 1:
-        Serial.print("   Should Blink RED... ");
-        if (currentMillis - previousMillis >= interval) {
-          previousMillis = currentMillis;
-
+    if (currentMillis - previousMillis >= interval) {
+      previousMillis = currentMillis;
+      switch (color) {
+        case 1:
+          ledtoLight = redPin;
           if (ledstate == LOW) {
-            Serial.print(" ....ON.... ");
             ledstate = HIGH;
           } else {
-            Serial.print(" ....OFF.... ");
             ledstate = LOW;
           }
-          digitalWrite(redPin, ledstate);
-        }
+          break;
 
+        case 2:
+          ledtoLight = orangePin;
+          if (ledstate == LOW) {
+            ledstate = HIGH;
+          } else {
+            ledstate = LOW;
+          }
+          break;
 
-        break;
+        case 3:
+          ledtoLight = greenPin;
+          if (ledstate == LOW) {
+            ledstate = HIGH;
+          } else {
+            ledstate = LOW;
+          }
+          break;
 
-      case 2:
-        if (interval % 250 == 0) {
-          digitalWrite(orangePin, true);
-        } else {
-          digitalWrite(orangePin, false);
-        }
-        break;
+        default:
 
-      case 3:
-        if (interval % 250 == 0) {
-          digitalWrite(greenPin, true);
-        } else {
-          digitalWrite(greenPin, false);
-        }
-        break;
+          break;
+      }
     }
+    //if not blink. Just turn it on or off
   } else {
 
     //just turn ON/OFF
     switch (color) {
       case 1:
-        digitalWrite(redPin, On_Off);
+        ledtoLight = redPin;
+        ledstate = On_Off;
         break;
 
       case 2:
-        digitalWrite(orangePin, On_Off);
+        ledtoLight = orangePin;
+        ledstate = On_Off;
         break;
 
       case 3:
-        digitalWrite(greenPin, On_Off);
+        ledtoLight = greenPin;
+        ledstate = On_Off;
         break;
     }
   }
+  //blink desired desired led
+ digitalWrite(ledtoLight, ledstate);
+}
+
+void setVibration(int vibrationDuration, int vibrationForce) {
+
+  duration = vibrationDuration;
+  force = vibrationForce;
+  vibrate = true;
+}
+
+void vibrationHint(int vibrationDuration, int vibrationForce) {
+  int interval = seconds();
+  int power = map(vibrationForce, 0, 100, 0, 255);
+
+
+  if (vibrationDuration != 0) {
+    if (interval % vibrationDuration == 0) {
+      power = 0;
+      vibrate = false;
+    }
+  } else {
+    power = 0;
+    vibrate = false;
+  }
+  Serial.print("VIBRATING");
+  analogWrite(vibratorPin, power);
 }
 
 void resetMotorTo(int position, int speed) {
 
   if (!inRange(position)) {
 
-    led(red, light, justON, 0);
+    led(red, light, 0);
     int speedMap = map(speed, 0, 100, 0, 255);
     analogWrite(motorPin, speedMap);
     Serial.print("   MotorShouldReset");
@@ -257,13 +284,22 @@ void resetMotorTo(int position, int speed) {
   } else {
 
     Serial.print("   Motor should not move");
-    led(red, light, Blink, 3);
+    led(red, light, 5);
     analogWrite(motorPin, 0);
-
+    setVibration(3, 50);
     motorFinishedReset = true;
   }
 }
 
 bool inRange(int position) {
   return ((Count_pulses >= position - 100 && Count_pulses <= position + 100));
+}
+
+void DC_Motor_Position() {
+  int b = digitalRead(Encoder_output_B);
+  if (b > 0) {
+    Count_pulses++;
+  } else {
+    Count_pulses--;
+  }
 }
