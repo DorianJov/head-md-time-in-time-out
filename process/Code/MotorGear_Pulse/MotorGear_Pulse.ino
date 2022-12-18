@@ -89,6 +89,7 @@ void loop() {
 
 
   if (vibrate) {
+    Serial.print("vibrating");
     vibrationHint(duration, force);
   }
 
