@@ -26,12 +26,16 @@ int blinkingTime;
 
 bool lightled;
 
+int ledstate = LOW;
+
 
 
 
 
 //define seconds function
 #define seconds() (millis() / 1000)
+
+unsigned long previousMillis = 0;
 
 //motor+
 #define motorPin 32
@@ -167,33 +171,47 @@ void led(int ledcolor, bool On_Off, bool blink, int timeBlinking) {
 
 void ledManager(int color, bool On_Off, bool blink, int blinkingTime) {
 
+  const long interval = 50;
+  unsigned long currentMillis = millis();
+  
+  
 
-  int interval = seconds();
   Serial.print(String("   Interval value:  ") + interval + String("    "));
 
+  
   if (blinkingTime != 0) {
-    Serial.print("   Should Blink... ");
-    if (interval % blinkingTime == 0) {
+
+   /* if (seconds() % blinkingTime == 0) {
       //goBlink = false;
       digitalWrite(redPin, false);
       digitalWrite(orangePin, false);
       digitalWrite(greenPin, false);
       lightled = false;
-    }
+    }*/
   }
   if (blink) {
+
     switch (color) {
       case 1:
-        if (interval % 2 == 0) {
+        Serial.print("   Should Blink RED... ");
+        if (currentMillis - previousMillis >= interval) {
+          previousMillis = currentMillis;
 
-          digitalWrite(redPin, true);
-        } else {
-          digitalWrite(redPin, false);
+          if (ledstate == LOW) {
+            Serial.print(" ....ON.... ");
+            ledstate = HIGH;
+          } else {
+            Serial.print(" ....OFF.... ");
+            ledstate = LOW;
+          }
+          digitalWrite(redPin, ledstate);
         }
+
+
         break;
 
       case 2:
-        if (interval % 2 == 0) {
+        if (interval % 250 == 0) {
           digitalWrite(orangePin, true);
         } else {
           digitalWrite(orangePin, false);
@@ -201,7 +219,7 @@ void ledManager(int color, bool On_Off, bool blink, int blinkingTime) {
         break;
 
       case 3:
-        if (interval % 2 == 0) {
+        if (interval % 250 == 0) {
           digitalWrite(greenPin, true);
         } else {
           digitalWrite(greenPin, false);
@@ -239,7 +257,7 @@ void resetMotorTo(int position, int speed) {
   } else {
 
     Serial.print("   Motor should not move");
-    led(red, light, Blink, 4);
+    led(red, light, Blink, 3);
     analogWrite(motorPin, 0);
 
     motorFinishedReset = true;
