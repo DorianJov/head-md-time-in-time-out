@@ -4,13 +4,15 @@
 
 // led pins
 #define redPin 15
-#define orangePin 0
+#define orangePin 2
 #define greenPin 16
+#define bluePin 19
 
 // make my function(ledManagement) faster.
 #define red 1
 #define orange 2
 #define green 3
+#define blue 4
 
 #define noLight false
 #define light true
@@ -35,7 +37,8 @@ bool vibrate;
 int duration;
 int force;
 
-
+//Level variable
+int whichLevel = 0;
 
 //define seconds function
 #define seconds() (millis() / 1000)
@@ -46,9 +49,11 @@ unsigned long previousMillis = 0;
 #define motorPin 32
 
 //vibrator pin
-#define vibratorPin 34
+#define vibratorPin 25
+int vibrationSequence = 0;
 
 bool motorFinishedReset = true;
+int MotorTriggerCount = 0;
 
 //Motor Encoder Value
 int Count_pulses = 0;
@@ -70,6 +75,7 @@ void setup() {
   pinMode(redPin, OUTPUT);
   pinMode(orangePin, OUTPUT);
   pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
   //Esp32 pin to transistor to motor+
   pinMode(motorPin, OUTPUT);
   //vibratorPIN
@@ -79,13 +85,25 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(String("Result:  ") + Count_pulses + String(" motorFinishedReset: ") + motorFinishedReset);
+  Serial.println(String("Result:  ") + Count_pulses + String(" CurrentLevel: ") + whichLevel);
 
   //LevelManager(0);
 
-  if (gameJustStarted) {
-    start();
-  }
+  /*switch (whichLevel) {
+    case 0:
+      start();
+      break;
+
+    case 1:
+      level();
+      break;
+  }*/
+
+  LevelManager(whichLevel);
+
+  //if (gameJustStarted) {
+    //start();
+  //}
 
 
   if (vibrate) {
@@ -130,11 +148,12 @@ void start() {
   //resetMotor, turn red light.
   if (!motorFinishedReset) {
     resetMotorTo(0, 100);
-  } else {
-    //Serial.print("GAME HAS STARTED");
-    //gameJustStarted = true;
-    //Puzzle begin
-    //LevelOneCanStart = true;
+  }
+
+  if(MotorTriggerCount==3){
+    //pass to level
+    whichLevel = 1;
+    MotorTriggerCount = 0;
   }
 }
 
@@ -142,18 +161,21 @@ void LevelManager(int Level) {
   switch (Level) {
     //Level 0 = tuto
     case 0:
-
-
-      if (Count_pulses <= -1000) {
-        punish(Level);
-        //led(red, light,);
-      }
-
+      start();
+      break;
+    case 1:
+      levelONE();
       break;
   }
 }
 
+void levelONE(){
 
+  led(blue, light, 0);
+  if(vibrationSequence == 0){
+  setVibration(2,20);
+  }
+}
 
 void led(int ledcolor, bool On_Off, int timeBlinking) {
 
@@ -170,7 +192,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
   const long interval = 100;
   unsigned long currentMillis = millis();
   unsigned long second = seconds();
-  
+
 
   //Serial.print(String("   Interval value:  ") + interval + String("    "));
 
@@ -184,6 +206,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
       digitalWrite(redPin, LOW);
       digitalWrite(orangePin, LOW);
       digitalWrite(greenPin, LOW);
+      digitalWrite(bluePin, LOW);
       color = NULL;
       lightled = false;
     }
@@ -218,6 +241,15 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
           }
           break;
 
+        case 4:
+          ledtoLight = bluePin;
+          if (ledstate == LOW) {
+            ledstate = HIGH;
+          } else {
+            ledstate = LOW;
+          }
+          break;
+
         default:
 
           break;
@@ -242,10 +274,16 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
         ledtoLight = greenPin;
         ledstate = On_Off;
         break;
+
+      case 4:
+        Serial.print(String("  BLUE LIGHT  ") +On_Off);
+        ledtoLight = bluePin;
+        ledstate = On_Off;
+        break;
     }
   }
   //blink desired desired led
- digitalWrite(ledtoLight, ledstate);
+  digitalWrite(ledtoLight, ledstate);
 }
 
 void setVibration(int vibrationDuration, int vibrationForce) {
@@ -263,31 +301,30 @@ void vibrationHint(int vibrationDuration, int vibrationForce) {
   if (vibrationDuration != 0) {
     if (interval % vibrationDuration == 0) {
       power = 0;
+      vibrationSequence++;
       vibrate = false;
     }
   } else {
     power = 0;
+    vibrationSequence++;
     vibrate = false;
   }
-  Serial.print("VIBRATING");
+  Serial.print(String(" VIBRATING: ") + power);
   analogWrite(vibratorPin, power);
 }
 
 void resetMotorTo(int position, int speed) {
 
   if (!inRange(position)) {
-
     led(red, light, 0);
     int speedMap = map(speed, 0, 100, 0, 255);
     analogWrite(motorPin, speedMap);
     Serial.print("   MotorShouldReset");
-
   } else {
-
     Serial.print("   Motor should not move");
     led(red, light, 5);
     analogWrite(motorPin, 0);
-    setVibration(3, 50);
+    MotorTriggerCount++;
     motorFinishedReset = true;
   }
 }
