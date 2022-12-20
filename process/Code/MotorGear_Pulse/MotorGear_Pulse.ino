@@ -201,6 +201,24 @@ void levelONE() {
     }
   }
 
+  ///////// LEVEL RULES
+  /*
+   if (Count_pulses <= -500) {
+    //Position passed. Activate -> motor has to reset
+    motorFinishedReset = false;
+  }
+  //resetMotor, turn red light.
+  if (!motorFinishedReset) {
+    resetMotorTo(0, 100);
+  }
+
+  if (MotorTriggerCount == 1) {
+    //pass to level
+    whichLevel = 1;
+    MotorTriggerCount = 0;
+  }
+  */
+
   //if motorwasreseted: hintshould start again with blue light
   // !hintisnotfinished
   // Vibration sequence = 0;
