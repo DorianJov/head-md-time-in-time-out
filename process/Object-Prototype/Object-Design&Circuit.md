@@ -1,3 +1,6 @@
+## PreFinal Object Design
+![Final 2D Design](PreFinal-Object-Design.png)
+
 ## Circuit
 ![Main Circuit](img/Object-Circuit.png)
 

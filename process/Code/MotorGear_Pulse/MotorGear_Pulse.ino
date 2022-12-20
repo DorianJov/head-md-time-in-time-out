@@ -66,6 +66,9 @@ int Currentlevel = 0;
 //pull string to begin.
 bool gameJustStarted = true;
 
+bool hintIsfinished = false;
+bool delayIsPassed = false;
+
 void setup() {
 
   //ESP.restart();
@@ -173,10 +176,35 @@ void LevelManager(int Level) {
 
 void levelONE() {
 
-  led(blue, light, 0);
-  if (vibrationSequence == 0) {
-    setVibration(100, 100);
+
+  //check start function to help
+  // LevelONE Hint.
+  //if motor isnt moving show hint.
+  //if motor is moving cancel hint and resetMotor.
+  if (!hintIsfinished) {
+    led(blue, light, 0);
+    switch (vibrationSequence) {
+      case 0:
+        setVibration(250, 100);
+        break;
+      case 1:
+        setVibration(1000, 255);
+        break;
+        case 2;
+        setVibration(250, 100);
+        break;
+        case 3:
+        vibrationSequence = 0;
+        led(blue, noLight, 0);
+        hintIsfinished = true;
+        break;
+    }
   }
+
+  //if motorwasreseted: hintshould start again with blue light
+  // !hintisnotfinished
+  // Vibration sequence = 0;
+  // don't forget to reset values
 }
 
 void led(int ledcolor, bool On_Off, int timeBlinking) {
@@ -195,7 +223,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
   const long interval = 100;
   unsigned long currentMillis = millis();
   unsigned long second = seconds();
-  
+
 
 
   //Serial.print(String("   Interval value:  ") + interval + String("    "));
@@ -261,37 +289,38 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
         default:
 
           break;
-      }
-    }
-    //if not blink. Just turn it on or off
-  } else {
-
-    //just turn ON/OFF
-    switch (color) {
-      case 1:
-        ledtoLight = redPin;
-        ledstate = On_Off;
-        break;
-
-      case 2:
-        ledtoLight = orangePin;
-        ledstate = On_Off;
-        break;
-
-      case 3:
-        ledtoLight = greenPin;
-        ledstate = On_Off;
-        break;
-
-      case 4:
-        Serial.print(String("  BLUE LIGHT  ") + On_Off);
-        ledtoLight = bluePin;
-        ledstate = On_Off;
-        break;
     }
   }
-  //blink desired desired led
-  digitalWrite(ledtoLight, ledstate);
+  //if not blink. Just turn it on or off
+}
+else {
+
+  //just turn ON/OFF
+  switch (color) {
+    case 1:
+      ledtoLight = redPin;
+      ledstate = On_Off;
+      break;
+
+    case 2:
+      ledtoLight = orangePin;
+      ledstate = On_Off;
+      break;
+
+    case 3:
+      ledtoLight = greenPin;
+      ledstate = On_Off;
+      break;
+
+    case 4:
+      Serial.print(String("  BLUE LIGHT  ") + On_Off);
+      ledtoLight = bluePin;
+      ledstate = On_Off;
+      break;
+  }
+}
+//blink desired desired led
+digitalWrite(ledtoLight, ledstate);
 }
 
 void setVibration(int vibrationDuration, int vibrationForce) {
@@ -307,25 +336,31 @@ void vibrationHint(int vibrationDuration, int vibrationForce) {
   int power;
   unsigned long currentMillis = millis();
 
-  if (currentMillis - VibratorpreviousMillis >= intervalue) {
-    VibratorpreviousMillis = currentMillis;
-
-    power = 0;
-    vibrationSequence++;
-    vibrate = false;
-
+  if (!delayIsPassed) {
+    if (currentMillis - VibratorpreviousMillis >= 500) {
+      VibratorpreviousMillis = currentMillis;
+      //half second has passed
+      delayIsPassed = true;
+    }
   } else {
-    power = vibrationForce;
-  }
+    if (currentMillis - VibratorpreviousMillis >= intervalue) {
+      VibratorpreviousMillis = currentMillis;
 
+      power = 0;
+      vibrationSequence++;
+
+      vibrate, delayIsPassed = false;
+
+    } else {
+      power = vibrationForce;
+    }
+  }
 
   /* if (interval % vibrationDuration == 0) {
     power = 0;
     vibrationSequence++;
     vibrate = false;
   }*/
-
-
   Serial.print(String(" VIBRATING: ") + power);
   analogWrite(vibratorPin, power);
 }
