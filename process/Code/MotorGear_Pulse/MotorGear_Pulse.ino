@@ -74,7 +74,7 @@ bool gameJustStarted = true;
 bool hintIsfinished = false;
 bool delayIsPassed = false;
 bool userskippedHint = false;
-bool ismoving = false;
+//bool ismoving = false;
 
 int LVL1Steps = 0;
 
@@ -100,7 +100,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(String(" isMoving ?  ") + isMoving(false) + String("  Is stopped for 5 sec:  ") + isStopforXsec(5000) + String("  Result:  ") + Count_pulses + String(" CurrentLevel: ") + whichLevel);
+  Serial.println(String(" isMoving ?  ") + isMoving(false) + String("  Is stopped for 5 sec:  ") + isStopforXsec(4500) + String("  Result:  ") + Count_pulses + String(" CurrentLevel: ") + whichLevel);
 
   //LevelManager(0);
 
@@ -193,16 +193,13 @@ void levelONE() {
   //if motor isnt moving show hint.
   //if motor is moving cancel hint and resetMotor.
 
-
   if (!hintIsfinished) {
     switch (vibrationSequence) {
-
       //needed to create a delay on the first vibration(case 0).
       //case -1 doesn't do anything appart to make the first vibration not going instant.
       case -1:
         setVibration(0, 0);
         break;
-
       case 0:
         led(blue, light, 0);
         setVibration(800, 80);
@@ -225,7 +222,7 @@ void levelONE() {
     }
 
     //if user use it before hint is finished restart.
-    if (Count_pulses <= -50) {
+    if (Count_pulses <= -10) {
       //Position passed. Activate -> motor has to reset
       led(blue, noLight, 0);
       setVibration(0, 0);
@@ -248,7 +245,8 @@ void levelONE() {
   //if fail return to begin
   if (!motorFinishedReset) {
     //resetMotor, turn red light.
-    resetMotorTo(0, 100);
+    ///////////////////////////////////////////////////////////////////////////RESET TO (100,X) instead of 0. if value is 0 it may be stuck between 2 phases -> led blink infinite.
+    resetMotorTo(100, 100);
     //step 0 is lvl1 hasnt begun -> restart
     LVL1Steps = 0;
   }
@@ -272,7 +270,7 @@ void levelONE() {
         //minimal distance to travel before accesing next step
         if (Count_pulses <= -250)
           if (!isMoving(false)) {
-            if (!isStopforXsec(10000)) {
+            if (!isStopforXsec(4500)) {
               //led(green, light, 0);
             } else {
               led(green, light, 5);
@@ -303,7 +301,7 @@ void levelONE() {
         //minimal distance to travel before accesing next step
         if (Count_pulses <= -120)
           if (!isMoving(false)) {
-            if (!isStopforXsec(10000)) {
+            if (!isStopforXsec(4500)) {
               //led(green, light, 0);
             } else {
               led(green, light, 5);
@@ -337,7 +335,7 @@ void levelONE() {
         //minimal distance to travel before accesing next step
         if (Count_pulses <= -250)
           if (!isMoving(false)) {
-            if (!isStopforXsec(10000)) {
+            if (!isStopforXsec(4500)) {
               //led(green, light, 0);
             } else {
               led(green, light, 5);
@@ -552,6 +550,7 @@ void vibrationHint(int vibrationDuration, int vibrationForce) {
       delayIsPassed = true;
     }
   } else {
+    
     if (currentMillis - VibratorpreviousMillis >= intervalue) {
       VibratorpreviousMillis = currentMillis;
 
@@ -597,7 +596,7 @@ void resetMotorTo(int position, int speed) {
 }
 
 bool inRange(int position) {
-  return ((Count_pulses >= position - 100 && Count_pulses <= position + 100));
+  return ((Count_pulses >= position - 100 && Count_pulses <= position + 300));
 }
 
 void DC_Motor_Position() {
@@ -611,35 +610,29 @@ void DC_Motor_Position() {
   }
 }
 
-bool isStopped;
 bool isStopforXsec(int millisec) {
-
   unsigned long currentMillis = millis();
-
+  const int interval = millisec - 1000;
   if (!isMoving(false)) {
-    if (currentMillis - IsStoppedpreviousSeconds >= 10000) {
-      IsStoppedpreviousSeconds = currentMillis;
-      isStopped = true;
+    if (currentMillis - IsStoppedpreviousSeconds >= interval) {
+      return true;
+    } else {
+      return false;
     }
   } else {
-    isStopped = false;
+    IsStoppedpreviousSeconds = currentMillis;
+    return false;
   }
-
-  return isStopped;
 }
 
 bool isMoving(bool calledfromMotor) {
-
   unsigned long currentMillis = millis();
-
   if (calledfromMotor) {
     isMovingpreviousMillis = currentMillis;
-    ismoving = true;
+    return true;
+  } else if (currentMillis - isMovingpreviousMillis >= 1000) {
+    return false;
   } else {
-
-    if (currentMillis - isMovingpreviousMillis >= 1000) {
-      ismoving = false;
-    }
+    return true;
   }
-  return ismoving;
 }
