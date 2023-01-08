@@ -1,13 +1,16 @@
-## Final Object Design
+## Final Object Design 2D
 ![Final 2D Design](img/Final-2D-Object-Design.png)
 
 ## Final Prototype Object Circuit
 ![Final Prototype Circuit](img/TimeRespect_FinalPrototype_BreadBoard.jpg)
 
+## Final schematics on Fritzing
+![Final Prototype schematics](img/fritzing_Electronic_schematic.png)
+
 ## PreFinal Object Design
 ![preFinal 2D Design](img/PreFinal-Object-Design.png)
 
-## Circuit
+## First Circuit test
 ![Main Circuit](img/Object-Circuit.png)
 
 ## Design MoodBoard
