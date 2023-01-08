@@ -1,5 +1,11 @@
+## Final Object Design
+![Final 2D Design](Final-2D-Object-Design.png)
+
+## Final Prototype Object Circuit
+![Final Prototype Circuit](TimeRespect_FinalPrototype_BreadBoard.jpg)
+
 ## PreFinal Object Design
-![Final 2D Design](PreFinal-Object-Design.png)
+![preFinal 2D Design](PreFinal-Object-Design.png)
 
 ## Circuit
 ![Main Circuit](img/Object-Circuit.png)
@@ -23,12 +29,9 @@ Couper la ficelle ?
 - trouver un fil qui pourrait casser ?
 - le fil se casse tout seul
 - faire un scenario avec le fil sur Twine
-- Faire un test A et B pou r 
--
+- Faire un test A et B 
 
-
-moteur:
-
+Moteur:
 - Utiliser un driver Motor ? 
 - Interupt Entrant = instantanée ( voir exemple sur motoGear). Interupt " YA eu un +1 go faire ça".
 - DC motor interupt ? Basé voir la vitesse et déclanché qqch (pwm à la main).
