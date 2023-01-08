@@ -1,11 +1,11 @@
 ## Final Object Design
-![Final 2D Design](Final-2D-Object-Design.png)
+![Final 2D Design](img/Final-2D-Object-Design.png)
 
 ## Final Prototype Object Circuit
-![Final Prototype Circuit](TimeRespect_FinalPrototype_BreadBoard.jpg)
+![Final Prototype Circuit](img/TimeRespect_FinalPrototype_BreadBoard.jpg)
 
 ## PreFinal Object Design
-![preFinal 2D Design](PreFinal-Object-Design.png)
+![preFinal 2D Design](img/PreFinal-Object-Design.png)
 
 ## Circuit
 ![Main Circuit](img/Object-Circuit.png)
