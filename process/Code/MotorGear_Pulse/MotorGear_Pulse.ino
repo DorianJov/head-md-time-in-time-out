@@ -37,12 +37,14 @@ bool vibrate;
 int duration;
 int force;
 int vibrationSequence = 0;
+int vibrationSeqSpeed = 0;
 
 //define seconds function
 unsigned long LEDpreviousMillis = 0;
 unsigned long VibratorpreviousMillis = 0;
 unsigned long isMovingpreviousMillis = 0;
 unsigned long IsStoppedpreviousSeconds = 0;
+unsigned long delayBeforeVibratingMillis = 0;
 
 //Motor string variable
 bool motorFinishedReset = true;
@@ -86,11 +88,12 @@ void setup() {
 
 void loop() {
 
-  LevelManager(whichLevel);
+  //LevelManager(whichLevel);
+  LevelManager(1);
 
   if (vibrate) {
     Serial.print("vibrating");
-    vibrationHint(duration, force);
+    vibrationHint(duration, force, vibrationSeqSpeed);
   }
 
   if (lightled) {
@@ -148,19 +151,19 @@ void levelONE() {
       //needed to create a delay for the first vibration(case 0).
       //case -1 doesn't do anything appart to make the first vibration(case 0) not going instant.
       case -1:
-        setVibration(0, 0);
+        setVibration(0, 0,0);
         break;
       case 0:
         led(blue, light, 0);
-        setVibration(800, 80);
+        setVibration(800, 80, 1000);
         break;
       case 1:
         led(blue, light, 0);
-        setVibration(500, 80);
+        setVibration(500, 80, 1000);
         break;
       case 2:
         led(blue, light, 0);
-        setVibration(800, 80);
+        setVibration(800, 80, 1000);
         break;
       case 3:
         vibrationSequence = -1;
@@ -174,7 +177,7 @@ void levelONE() {
     //if user pull string before hint is finished -> restart and reset values.
     if (Count_pulses <= -10) {
       led(blue, noLight, 0);
-      setVibration(0, 0);
+      setVibration(0, 0, 0);
       LVL1Steps = 0;
       vibrationSequence = -1;
       motorFinishedReset = false;
@@ -263,11 +266,11 @@ void levelTWO() {
       //needed to create a delay for the first vibration(case 0).
       //case -1 doesn't do anything appart to make the first vibration(case 0) not going instant.
       case -1:
-        setVibration(0, 0);
+        setVibration(0, 0, 0);
         break;
       case 0:
         led(blue, light, 0);
-        setVibration(800, 80);
+        setVibration(800, 80, 1000);
         break;
 
       case 1:
@@ -282,7 +285,7 @@ void levelTWO() {
     //if user pull string before hint is finished -> restart and reset values.
     if (Count_pulses <= -10) {
       led(blue, noLight, 0);
-      setVibration(0, 0);
+      setVibration(0, 0, 0);
       LVL2Steps = 1;
       vibrationSequence = -1;
       motorFinishedReset = false;
@@ -328,20 +331,20 @@ void levelTHREE() {
       //needed to create a delay for the first vibration(case 0).
       //case -1 doesn't do anything appart to make the first vibration(case 0) not going instant.
       case -1:
-        setVibration(0, 0);
+        setVibration(0, 0, 0);
         break;
       case 0:
         led(blue, light, 0);
-        setVibration(200, 255);
+        setVibration(300, 255, 300);
         break;
 
       case 1:
         led(blue, light, 0);
-        setVibration(200, 255);
+        setVibration(300, 255, 300);
         break;
       case 2:
         led(blue, light, 0);
-        setVibration(200, 255);
+        setVibration(300, 255, 300);
         break;
 
       case 3:
@@ -356,7 +359,7 @@ void levelTHREE() {
     //if user pull string before hint is finished -> restart and reset values.
     if (Count_pulses <= -10) {
       led(blue, noLight, 0);
-      setVibration(0, 0);
+      setVibration(0, 0, 0);
       LVL3Steps = 1;
       vibrationSequence = -1;
       motorFinishedReset = false;
@@ -379,7 +382,7 @@ void levelTHREE() {
           led(green, light, 5);
           Count_pulses = 0;
           level_pulses = 0;
-         //hintIsfinished = false;
+          //hintIsfinished = false;
           LVL3Steps = 2;
         }
         if (level_pulses <= -71) {
@@ -474,7 +477,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
     //just turn ON/OFF
     switch (color) {
       case 1:
-        Serial.print(String("  Red  ") + On_Off);
+        //Serial.print(String("  Red  ") + On_Off);
         digitalWrite(orangePin, LOW);
         digitalWrite(greenPin, LOW);
         digitalWrite(bluePin, LOW);
@@ -483,7 +486,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
         break;
 
       case 2:
-        Serial.print(String("  Orange  ") + On_Off);
+        // Serial.print(String("  Orange  ") + On_Off);
         digitalWrite(redPin, LOW);
         digitalWrite(bluePin, LOW);
         ledtoLight = orangePin;
@@ -491,7 +494,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
         break;
 
       case 3:
-        Serial.print(String("  Green  ") + On_Off);
+        //Serial.print(String("  Green  ") + On_Off);
         digitalWrite(redPin, LOW);
         digitalWrite(bluePin, LOW);
         ledtoLight = greenPin;
@@ -499,7 +502,7 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
         break;
 
       case 4:
-        Serial.print(String("  BLUE  ") + On_Off);
+        //Serial.print(String("  BLUE  ") + On_Off);
         digitalWrite(redPin, LOW);
         digitalWrite(orangePin, LOW);
         digitalWrite(greenPin, LOW);
@@ -515,43 +518,50 @@ void ledManager(int color, bool On_Off, int blinkingTime) {
   }
 }
 
-void setVibration(int vibrationDuration, int vibrationForce) {
+void setVibration(int vibrationDuration, int vibrationForce, int delayBetweenvibration) {
   duration = vibrationDuration;
   force = vibrationForce;
+  vibrationSeqSpeed = delayBetweenvibration;
   vibrate = true;
 }
 
-void vibrationHint(int vibrationDuration, int vibrationForce) {
+void vibrationHint(int vibrationDuration, int vibrationForce, int delayBetweenvibration) {
   const long intervalue = vibrationDuration;
-  const long delayBeforeVibrating = 1000;
+  const long delayBeforeVibrating = delayBetweenvibration;
   int power;
   unsigned long currentMillis = millis();
+
 
   if (!delayIsPassed) {
     power = 0;
     if (currentMillis - VibratorpreviousMillis >= delayBeforeVibrating) {
       VibratorpreviousMillis = currentMillis;
+      //delayBeforeVibratingMillis = currentMillis2;
+
       //half second has passed
-      Serial.print("PAAAAASSSEDDD");
+      Serial.print("  PAAAAASSSEDDD ");
       delayIsPassed = true;
     }
-  } else {
 
+  } else {
+    power = vibrationForce;
     if (currentMillis - VibratorpreviousMillis >= intervalue) {
+      // delayBeforeVibratingMillis = currentMillis2;
+      //VibratorpreviousMillis = currentMillis;
       VibratorpreviousMillis = currentMillis;
+      Serial.print("  STOOOPPPEDDD ");
+      // VibratorpreviousMillis = currentMillis;
       power = 0;
       vibrationSequence++;
       vibrate = false;
       delayIsPassed = false;
-    } else {
-      power = vibrationForce;
     }
   }
 
   if (vibrationDuration == 0) {
     power = 0;
   }
-  Serial.print(String(" VIBRATING: ") + power + String("delayIsPassed:  ") + delayIsPassed);
+  Serial.print(String(" VIBRATING power: ") + power + String("  delayIsPassed:  ") + delayIsPassed + String("  VibratorpreviousMillis:  ") + VibratorpreviousMillis);
   analogWrite(vibratorPin, power);
 }
 
