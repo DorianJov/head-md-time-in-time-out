@@ -88,8 +88,8 @@ void setup() {
 
 void loop() {
 
-  //LevelManager(whichLevel);
-  LevelManager(1);
+  LevelManager(whichLevel);
+ // LevelManager(1);
 
   if (vibrate) {
     Serial.print("vibrating");
