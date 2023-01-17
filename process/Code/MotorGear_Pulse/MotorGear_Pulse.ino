@@ -389,6 +389,7 @@ void levelTHREE() {
           motorFinishedReset = false;
         }
         break;
+        
     }
   } else {
     //FAILED -> resetMotor, turn red light.
